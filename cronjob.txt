@@ -1,0 +1,32 @@
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+# Minute   Hour   Day of Month       Month          Day of Week        Command    
+# (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)                
+#
+    20      1          *             *                *            /home/pi/sunrise/imsak.pl   > /dev/null 2>&1
+    21      3          *             *                *            /home/pi/sunrise/fajr.pl    > /dev/null 2>&1
+    20      8          *             *                *            /home/pi/sunrise/zuhr.pl    > /dev/null 2>&1
+    20      15         *             *                *            /home/pi/sunrise/maghrib.pl > /dev/null 2>&1
+    21      15         *             *                *            /home/pi/sunrise/isha.pl    > /dev/null 2>&1
+
