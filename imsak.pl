@@ -42,7 +42,7 @@ my $sunrise_dt = $astro_Martinez->sunrise_datetime($today_dt);
 # Coming up with the final DateTime ojbect
 my $tmp1_dt = $sunrise_dt->clone;
 $tmp1_dt->subtract_duration ( $rise_subtract_duration );
-$tmp1_dt->set_time_zone( 'America/Los_Angeles');
+$tmp1_dt->set_time_zone( "local");
 
 print  "Date: " . $today_dt->datetime . "\n" .
        "Astronomical Twilight: " . $sunrise_dt->hms . "\n" .

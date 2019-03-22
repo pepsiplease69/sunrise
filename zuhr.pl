@@ -34,13 +34,13 @@ my $sunset_epoch  = $sunset_dt->epoch();
 my $midday_epoch = ( $sunrise_epoch + $sunset_epoch ) / 2;
 my $midday_dt = DateTime-> from_epoch(
                       epoch => $midday_epoch,
-                      time_zone => 'America/Los_Angeles' );
+                      time_zone => "local" );
 
 
 
 
 my $tmp1_dt = $midday_dt->clone;
-$tmp1_dt->set_time_zone( 'America/Los_Angeles');
+$tmp1_dt->set_time_zone( "local");
 
 print  "Date: " . $today_dt->datetime . "\n" .
        "Sunrise: " . $sunrise_dt->hms . "\n" .

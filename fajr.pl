@@ -29,7 +29,7 @@ my $sunrise_dt = $sun_Martinez->sunrise_datetime($today_dt);
 
 
 my $tmp1_dt = $sunrise_dt->clone;
-$tmp1_dt->set_time_zone( 'America/Los_Angeles');
+$tmp1_dt->set_time_zone( "local");
 
 print  "Date: " . $today_dt->datetime . "\n" .
        "Sunrise: " . $sunrise_dt->hms . "\n" .

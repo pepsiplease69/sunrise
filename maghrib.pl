@@ -26,7 +26,7 @@ use LWP::Simple;
 my $sunset_dt  = $sun_Martinez->sunset_datetime($today_dt);
 
 my $tmp2_dt = $sunset_dt->clone;
-$tmp2_dt->set_time_zone( 'America/Los_Angeles');
+$tmp2_dt->set_time_zone( "local");
 
 print  "Date: " . $today_dt->datetime . "\n" .
        "Alarm: " . $tmp2_dt->hms . "\n" .
