@@ -14,14 +14,15 @@ use LWP::Simple;
 
 
 my $today_dt = DateTime->today( time_zone => "local" );
+our ( $mylong );
+our ( $mylat );
+require ( "./config.pl" );
 
 
-# generating the DateTime::Event::Sunrise object
-my $sun_Martinez  = DateTime::Event::Sunrise->new (
-			longitude => 0.000000,
-                        latitude  => 0.000000
-		     );
 
+  my $sun_Martinez  = DateTime::Event::Sunrise->new (
+                        longitude => $mylong,
+                        latitude  => $mylat);
 
 
 
