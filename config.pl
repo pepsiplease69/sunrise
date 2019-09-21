@@ -9,7 +9,7 @@ $mylong     = 39.826186;
 $mylat      = 21.422459;
 
 
-sub play_azan
+sub announce_adhan
 {
     system ( "/usr/bin/mpg321 /home/pi/sounds/adhan.mp3" );
 }
