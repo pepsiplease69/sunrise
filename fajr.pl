@@ -12,11 +12,15 @@ use LWP::Simple;
 
   my $today_dt = DateTime->today( time_zone => "local" );
 
+our ( $mylong );
+our ( $mylat );
+require ( "./config.pl" );
+
 
 
   my $sun_Martinez  = DateTime::Event::Sunrise->new (
-			longitude => 0.000000,
-                        latitude  => 0.000000);
+                        longitude => $mylong,
+                        latitude  => $mylat);
 
 
 
@@ -29,7 +33,7 @@ my $sunrise_dt = $sun_Martinez->sunrise_datetime($today_dt);
 
 
 my $tmp1_dt = $sunrise_dt->clone;
-$tmp1_dt->set_time_zone( "local");
+$tmp1_dt->set_time_zone( 'local');
 
 print  "Date: " . $today_dt->datetime . "\n" .
        "Sunrise: " . $sunrise_dt->hms . "\n" .
