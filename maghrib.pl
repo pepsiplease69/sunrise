@@ -12,11 +12,19 @@ use LWP::Simple;
 
   my $today_dt = DateTime->today( time_zone => "local" );
 
+our ( $mylong );
+our ( $mylat );
+require ( "./config.pl" );
+
 
 
   my $sun_Martinez  = DateTime::Event::Sunrise->new (
-			longitude => 0.000000,
-                        latitude  => 0.000000);
+                        longitude => $mylong,
+                        latitude  => $mylat);
+
+
+
+
 
 
 
