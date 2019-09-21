@@ -18,3 +18,9 @@ Afterwards, install the cronjobs
 crontab -i cronjob.txt
 crontab -l
 ```
+
+Optional: Install mpg321 utility to play audio/mp3 files:
+
+```
+sudo apt-get install mpg321
+```
