@@ -12,3 +12,9 @@ Afterwards, run the command
 ```
 setup.sh
 ```
+Afterwards, install the cronjobs
+
+```
+crontab -i cronjob.txt
+crontab -l
+```
