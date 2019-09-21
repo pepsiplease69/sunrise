@@ -57,14 +57,14 @@ print  "Date: " . $today_dt->datetime . "\n" .
 
 my $loop1  = IO::Async::Loop->new;
 my $timer1 = IO::Async::Timer::Absolute->new(
-		time      => $tmp1_dt->epoch(),
-		on_expire => sub {
+        time      => $tmp1_dt->epoch(),
+        on_expire => sub {
                     #get ( "http://10.0.1.187/cgi-bin/play.pl?file=airport_chime1" );
                     #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan_AbdulBasit&gain=200" );
                     announce_adhan ( );
-					$loop1->stop;
-				 },
-		);
+                    $loop1->stop;
+                 },
+        );
 
 
 

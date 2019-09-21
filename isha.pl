@@ -29,10 +29,10 @@ require ( "./config.pl" );
 
 # generating the DateTime::Duration ojbect
 my $set_add_duration = DateTime::Duration->new (
-			hours    => 0,
-			minutes  => 22,
-			seconds  => 0
-		      );
+            hours    => 0,
+            minutes  => 22,
+            seconds  => 0
+              );
 
 
 
@@ -60,16 +60,16 @@ print  "Date: " . $today_dt->datetime . "\n" .
 # creating a timer and a loop ojbect
 my $loop2  = IO::Async::Loop->new;
 my $timer2 = IO::Async::Timer::Absolute->new(
-		time      => $tmp2_dt->epoch(),
-		on_expire => sub {
-					#get ( "http://10.0.1.187/cgi-bin/play.pl?file=Ezan_IsaAydin&gain=40" );
-					#get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-AbadharHalwachi&gain=40" );
-					#get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-MasjideKufa&gain=200" );
+        time      => $tmp2_dt->epoch(),
+        on_expire => sub {
+                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Ezan_IsaAydin&gain=40" );
+                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-AbadharHalwachi&gain=40" );
+                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-MasjideKufa&gain=200" );
                     #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-Shia&gain=70" );
                     announce_adhan ( );
-					$loop2->stop;
-				 },
-		);
+                    $loop2->stop;
+                 },
+        );
 
 
 

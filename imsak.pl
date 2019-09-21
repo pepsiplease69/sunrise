@@ -30,10 +30,10 @@ my $astro_Martinez  = DateTime::Event::Sunrise->new (
 
 # generating the DateTime::Duration ojbect
 my $rise_subtract_duration = DateTime::Duration->new (
-				hours    => 0,
-				minutes  => 5,
-				seconds  => 0
-			     );
+                hours    => 0,
+                minutes  => 5,
+                seconds  => 0
+                 );
 
 
 
@@ -56,14 +56,14 @@ print  "Date: " . $today_dt->datetime . "\n" .
 # creating a timer and a loop ojbect
 my $loop1  = IO::Async::Loop->new;
 my $timer1 = IO::Async::Timer::Absolute->new(
-		time      => $tmp1_dt->epoch(),
-		on_expire => sub {
+        time      => $tmp1_dt->epoch(),
+        on_expire => sub {
                     #get ( "http://10.0.1.187/cgi-bin/play.pl?file=zen" );
                     #get ( "http://10.0.1.187/cgi-bin/play.pl?file=twilight" );
                     announce_twilight ( );
-					$loop1->stop;
-				 },
-		);
+                    $loop1->stop;
+                 },
+        );
 
 
 
