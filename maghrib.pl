@@ -45,8 +45,6 @@ my $loop2  = IO::Async::Loop->new;
 my $timer2 = IO::Async::Timer::Absolute->new(
         time      => $tmp2_dt->epoch(),
         on_expire => sub {
-                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=zen" );
-                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=sunset" );
                     announce_sunset ( );
                     $loop2->stop;
                  },

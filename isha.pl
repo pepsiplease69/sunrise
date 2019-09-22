@@ -62,10 +62,6 @@ my $loop2  = IO::Async::Loop->new;
 my $timer2 = IO::Async::Timer::Absolute->new(
         time      => $tmp2_dt->epoch(),
         on_expire => sub {
-                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Ezan_IsaAydin&gain=40" );
-                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-AbadharHalwachi&gain=40" );
-                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-MasjideKufa&gain=200" );
-                    #get ( "http://10.0.1.187/cgi-bin/play.pl?file=Adhan-Shia&gain=70" );
                     announce_adhan ( );
                     $loop2->stop;
                  },
