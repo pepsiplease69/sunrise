@@ -16,7 +16,7 @@ use LWP::Simple;
 my $today_dt = DateTime->today( time_zone => "local" );
 our ( $mylong );
 our ( $mylat );
-require ( "./config.pl" );
+require ( "/home/pi/sunrise/config.pl" );
 
 
 

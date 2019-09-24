@@ -14,7 +14,7 @@ use LWP::Simple;
 
 our ( $mylong );
 our ( $mylat );
-require ( "./config.pl" );
+require ( "/home/pi/sunrise/config.pl" );
 
 
 
