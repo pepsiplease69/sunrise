@@ -59,7 +59,7 @@ my $loop1  = IO::Async::Loop->new;
 my $timer1 = IO::Async::Timer::Absolute->new(
         time      => $tmp1_dt->epoch(),
         on_expire => sub {
-                    announce_adhan ( );
+                    announce_zuhr ( );
                     $loop1->stop;
                  },
         );
