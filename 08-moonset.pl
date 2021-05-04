@@ -37,7 +37,8 @@ print "\tMoon @{[$rise ? 'rise' : 'set']} is ",
 
 if ( $rise )
 {
-    print "rise next \t";
+    print "rise next \n";
+    exit;
 }
 else
 {
@@ -54,7 +55,7 @@ if ( ( $moonset_dt->hour < 16 )  ||
 {
     #  if moonset is occurring before 4pm or after 10pm (technically 9:59) then don't set alarm
     #  it goes to the next calendar day and starts reporting the prior day's moonset time
-    print "moontime is out of bounds (16,21) exiting\n";
+    print "moonset is out of bounds (16,21) exiting\n";
     exit;
 }
 
@@ -79,16 +80,7 @@ my $loop2  = IO::Async::Loop->new;
 my $timer2 = IO::Async::Timer::Absolute->new(
 		time      => $moonset_dt->epoch(),
 		on_expire => sub {
-                    get ( "http://10.0.1.187/cgi-bin/play.pl?file=zen" );
-                    get ( "http://10.0.1.187/cgi-bin/play.pl?file=airport_chime3" );
-                    if ( $rise )
-                    {
-                        get ( "http://10.0.1.187/cgi-bin/play.pl?file=moonrise" );
-                    }
-                    else
-                    {
-                        get ( "http://10.0.1.187/cgi-bin/play.pl?file=moonset" );
-                    }
+                    announce_moonset ( );
 					$loop2->stop;
 				 },
 		);
