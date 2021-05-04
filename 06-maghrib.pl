@@ -16,6 +16,7 @@ use LWP::Simple;
 my $today_dt = DateTime->today( time_zone => "local" );
 our ( $mylong );
 our ( $mylat );
+our ( $ishaOffset );
 require ( "/home/pi/sunrise/config.pl" );
 
 
@@ -30,7 +31,7 @@ require ( "/home/pi/sunrise/config.pl" );
 # generating the DateTime::Duration ojbect
 my $set_add_duration = DateTime::Duration->new (
             hours    => 0,
-            minutes  => 22,
+            minutes  => $ishaOffset,
             seconds  => 0
               );
 
@@ -62,7 +63,7 @@ my $loop2  = IO::Async::Loop->new;
 my $timer2 = IO::Async::Timer::Absolute->new(
         time      => $tmp2_dt->epoch(),
         on_expire => sub {
-                    announce_adhan ( );
+                    announce_maghrib ( );
                     $loop2->stop;
                  },
         );
