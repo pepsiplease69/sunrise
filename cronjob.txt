@@ -24,9 +24,13 @@
 # Minute   Hour   Day of Month       Month          Day of Week        Command    
 # (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)                
 #
-    20      1          *             *                *            /home/pi/sunrise/imsak.pl   > /dev/null 2>&1
-    21      3          *             *                *            /home/pi/sunrise/fajr.pl    > /dev/null 2>&1
-    20      8          *             *                *            /home/pi/sunrise/zuhr.pl    > /dev/null 2>&1
-    20      15         *             *                *            /home/pi/sunrise/maghrib.pl > /dev/null 2>&1
-    21      15         *             *                *            /home/pi/sunrise/isha.pl    > /dev/null 2>&1
+    20      1          *             *                *            /home/pi/sunrise/01-imsak.pl      > /dev/null 2>&1
+    21      3          *             *                *            /home/pi/sunrise/02-fajr.pl       > /dev/null 2>&1
+    21      3          *             *                *            /home/pi/sunrise/03-sunrise.pl    > /dev/null 2>&1
+    20      8          *             *                *            /home/pi/sunrise/04-zuhr.pl       > /dev/null 2>&1
+    20      15         *             *                *            /home/pi/sunrise/05-sunset.pl     > /dev/null 2>&1
+    21      15         *             *                *            /home/pi/sunrise/06-maghrib.pl    > /dev/null 2>&1
+    20      16         *             *                *            /home/pi/sunrise/07-moonrise.pl     > /dev/null 2>&1
+    21      16         *             *                *            /home/pi/sunrise/08-moonset.pl    > /dev/null 2>&1
+
 
