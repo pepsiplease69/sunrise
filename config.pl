@@ -9,8 +9,8 @@ our ( $myalt );
 our ( $fajrOffset );
 our ( $imsakOffset );
 our ( $ishaOffset );
-$mylong     = -122.109970;
-$mylat      = +38.000824;
+$mylong     = +39.826;
+$mylat      = +21.422;
 $myalt      = 16.68;         # meters
 
 
