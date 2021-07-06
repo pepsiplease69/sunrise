@@ -1,5 +1,11 @@
 # sunrise
 
+Set up the correct locale and timezone on the device
+```
+sudo raspi-config
+```
+
+
 
 Installation: 
 
@@ -12,7 +18,7 @@ Afterwards, run the command
 ```
 setup.sh
 ```
-Afterwards, install the cronjobs
+Afterwards, edit the cronjob.txt file and install the cronjobs
 
 ```
 crontab -i cronjob.txt
