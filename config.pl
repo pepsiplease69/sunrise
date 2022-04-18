@@ -50,6 +50,19 @@ sub announce_zuhr
     #system ( "/usr/bin/mpg321 /home/pi/sounds/adhan.mp3" );
 }
 
+sub announce_asr_start
+{
+    get ( "http://10.0.1.187/cgi-bin/play.pl?file=plane-ding&gain=200" );
+    #system ( "/usr/bin/mpg321 /home/pi/sounds/adhan.mp3" );
+}
+
+sub announce_asr_end
+{
+    get ( "http://10.0.1.187/cgi-bin/play.pl?file=plane-ding&gain=200" );
+    get ( "http://10.0.1.187/cgi-bin/play.pl?file=plane-ding&gain=200" );
+    #system ( "/usr/bin/mpg321 /home/pi/sounds/adhan.mp3" );
+}
+
 
 
 sub announce_sunset
