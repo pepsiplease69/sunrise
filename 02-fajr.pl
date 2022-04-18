@@ -53,6 +53,16 @@ print  "Date: " . $today_dt->datetime . "\n" .
        "Alarm: " . $tmp1_dt->hms . "\n\n\n";
 
 
+if ( time() > $tmp1_dt->epoch() )   # if current time is greater than scheduled event
+                                    # then the event occurred in the past
+                                    # no need to schedule it, just print message
+                                    # and exit program
+{
+    print "Event occured in the past\n";
+    exit();
+}
+
+
 
 # creating a timer and a loop ojbect
 my $loop1  = IO::Async::Loop->new;
