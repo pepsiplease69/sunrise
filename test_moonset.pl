@@ -73,7 +73,6 @@ if ( ( $moonset_dt->hour < 16 )  ||
 }
 
 
-
 #-------------------------------------------------------------
 
 
@@ -88,6 +87,7 @@ if ( ( $moonset_dt->hour < 16 )  ||
 print  "Date: " .  $moonset_dt->mdy . " " .
        "Alarm: " . $moonset_dt->hms . "\n" ;
 
+exit;
 
 my $loop2  = IO::Async::Loop->new;
 my $timer2 = IO::Async::Timer::Absolute->new(
