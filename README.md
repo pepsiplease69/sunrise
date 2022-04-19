@@ -33,6 +33,9 @@ Optional: Install mpg321 utility to play audio/mp3 files[^1]:
 sudo apt-get install mpg321
 ```
 
+Optional: If there's a particular azan that you enjoy listening to, which is available on youtube, you can always extract audio from there using a utility called youtube-dl. It is available [here](https://youtube-dl.org)
+
+
 [^1]:  Important side note.  If you are planning to use the 3.5mm audio jack on the raspberry pi to attach some speakers there and play audio that way, please be aware that, although this should work fine in most cases, if at any point you connect a display to your HDMI port on the raspberry pi, the audio will start getting routed to the HDMI port instead of the 3.5mm audio jack. There's probably a way to override this behavior, but the easiest thing is to unplug HDMI and work over ssh when you're wanting to test speakers/audio.
 
 
