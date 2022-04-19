@@ -93,6 +93,8 @@ We see examples of 3 scheduled jobs invoking our scripts.
 - Sunrise job is kicked off at 3:21AM  
 - Zuhr job is kicked off at 8:20AM
 - Sunset job is kicked off at 3:20PM
+
+
 (invokation times were selected well enough ahead of time for the event to occur in the future)
 
 Once the script has been invoked, it calculates the time for the event and pauses and waits for the desired time to arrive, it then executes the announce handler and exits.
