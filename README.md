@@ -131,7 +131,7 @@ This parent job kicks off all the events in the proper succession.
 
 The parent job will invoke all of the scripts and then wait for the next day to start the next run.
 
-If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the jobs, the ones that occur in the past will do nothing and will not block execution. Execution will ultimately arrive at the job that has to wait for a future event and will block there (this is the desired behavior).
+If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the jobs, the scripts for the events that have already occurred in the past, will do nothing and will not block execution. Execution will ultimately arrive at the job that has to wait for a future event and will block there (this is the desired behavior).
 
 The code for the parent job looks like the following:
 
