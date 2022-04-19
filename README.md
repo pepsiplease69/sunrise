@@ -7,7 +7,8 @@ sudo raspi-config
 
 
 
-Installation: 
+---
+## Installation: 
 
 ```
 sudo apt-get install git
@@ -31,7 +32,8 @@ Optional: Install mpg321 utility to play audio/mp3 files:
 sudo apt-get install mpg321
 ```
 
-Configuration:
+---
+## Configuration:
 All of the configurable parameters are stored in a file called `config.pl`
 
 Override the following variables to configure your geo-coordinates and altitude
