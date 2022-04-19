@@ -35,7 +35,8 @@ sudo apt-get install mpg321
 
 Optional: If there's a particular azan that you enjoy listening to, which is available on youtube, you can always extract audio from there using a utility called youtube-dl.
 
-It is available [here](https://youtube-dl.org)
+It is available [here](https://youtube-dl.org).
+
 You'll also need the ffmpeg decoder which is available [here](https://www.ffmpeg.org/download.html)
 
 
