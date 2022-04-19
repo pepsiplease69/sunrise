@@ -124,7 +124,7 @@ Instead  we can put a parent job on the crontab, to be invoked at boot up time.
 
 ```
 
-This parent job kicks off all the events in the proper succession. 
+This parent job kicks off all the scripts in the proper succession. 
 
 - If the event occurs in the future, then the perl script will block the processing and wait for the event
 - If the event happens to have occurred in the past, the perl script will quietly output a message indicating that, and will not make any announcements and exit gracefully.
