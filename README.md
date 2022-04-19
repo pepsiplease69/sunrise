@@ -146,7 +146,7 @@ If the device reboots for any reason or loses power inadvertently, then the next
 
 The scripts for the events that have already occurred in the past, will do nothing and will not block execution and will exit immediately.
 
-Execution will ultimately arrive at the script that has to wait for an event in the future to occur. The script will block execution there (this is the desired behavior).
+Execution will ultimately arrive at the script that has to wait for an event to occur in the future. The script will block execution there (this is the desired behavior).
 
 ![parent-script-fail](parent-script-fail.jpg)
 
