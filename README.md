@@ -105,9 +105,9 @@ Once the script has been invoked, it calculates the time for the event and pause
 
 The approach mentioned above has a drawback. Although it's simpler, and offers more control, it is not fail-safe.
 
-If, for example, cron kicks off sunrise job at 3:21AM and the job sits and waits till 5AM or so.
+If, for example, cron kicks off sunrise job at 8:20AM and the job sits and waits till 12 noon or so.
 
-If the system goes through a reboot or loses power and has to be restarted, then the announcement for sunrise will be lost and will not occur ( without manual intervention ).
+If (at 9AM) the system goes through a reboot or loses power and has to be restarted, then the announcement for zuhr will be lost and will not occur ( without manual intervention ).
 
 ![direct-method-fail](direct-method-fail.jpg)
 
