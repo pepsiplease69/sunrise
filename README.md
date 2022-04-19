@@ -150,7 +150,9 @@ Execution will ultimately arrive at the script that has to wait for an event to 
 
 ![parent-script-fail](parent-script-fail.jpg)
 
-And this is how an event/announcement which would have otherwise been missed due to a reboot or failure, will now still occur, because we've now built-in some logic to figure out where we are (which part of the day) and what to wait for next, this logic comes into effect right at boot up time.
+And this is how an event/announcement which would have otherwise been missed due to a reboot or failure, will now still occur, because we've now built-in some logic to figure out where we are (which part of the day) and what to wait for next.
+
+This logic comes into effect right at boot up time.
 
 The code for the parent job looks like the following:
 
