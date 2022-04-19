@@ -33,7 +33,7 @@ Optional: Install mpg321 utility to play audio/mp3 files[^1]:
 sudo apt-get install mpg321
 ```
 
-[^1]:  Important side note.  If you are planning to use the 3.5mm audio jack on the raspberry pi to attach some speakers there and play audio that way, please be aware that, although this should work fine in most cases if you run headless and connect via ssh.  If at any point you connect a display to your HDMI port on the raspberry pi, the audio will start getting routed to the HDMI port instead of the 3.5mm audio jack. There's probably a way to override this behavior, but the easiest thing is to unplug HDMI and work over ssh when you're wanting to test speakers/audio.
+[^1]:  Important side note.  If you are planning to use the 3.5mm audio jack on the raspberry pi to attach some speakers there and play audio that way, please be aware that, although this should work fine in most cases.  If at any point you connect a display to your HDMI port on the raspberry pi, the audio will start getting routed to the HDMI port instead of the 3.5mm audio jack. There's probably a way to override this behavior, but the easiest thing is to unplug HDMI and work over ssh when you're wanting to test speakers/audio.
 
 
 ## Configuration:
