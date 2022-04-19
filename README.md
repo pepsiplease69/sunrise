@@ -39,6 +39,9 @@ It is available [here](https://youtube-dl.org).
 
 You'll also need the ffmpeg decoder which is available [here](https://www.ffmpeg.org/download.html)
 
+You'll need to run the above two utilities on your local desktop (windows/mac) to obtain the mp3 file and then sftp it over to your raspberry pi, and maybe store all your audio files under '~/audio' and play them from there.
+
+
 
 [^1]:  Important side note.  If you are planning to use the 3.5mm audio jack on the raspberry pi to attach some speakers there and play audio that way, please be aware that, although this should work fine in most cases, if at any point you connect a display to your HDMI port on the raspberry pi, the audio will start getting routed to the HDMI port instead of the 3.5mm audio jack. There's probably a way to override this behavior, but the easiest thing is to unplug HDMI and work over ssh when you're wanting to test speakers/audio.
 
