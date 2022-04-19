@@ -131,7 +131,7 @@ This parent job kicks off all the scripts in the proper succession.
 
 The parent job will invoke all of the scripts and then wait for the next day to start the next run.
 
-If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the jobs, the scripts for the events that have already occurred in the past, will do nothing and will not block execution. Execution will ultimately arrive at the job that has to wait for a future event and will block there (this is the desired behavior).
+If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the scripts, the scripts for the events that have already occurred in the past, will do nothing and will not block execution and will exit immediately. Execution will ultimately arrive at the script that has to wait for an event in the future to occur. The script will block execution there (this is the desired behavior).
 
 The code for the parent job looks like the following:
 
@@ -148,6 +148,109 @@ while ( 1 )
 end
 
 ```
+
+
+
+
+
+>  
+>      +
+>      |
+>      |    *--IMSAK---->
+>      |     *---FAJR-------->
+>      |      *----SUNRISE-------->
+>      |
+>      |                              *----------ZUHR---------------->
+>      |
+>      |                                                              *----------SUNSET------------->
+>      |                                                               *-----------MAGHRIB----------------->
+>      |
+>      |
+>      |
+>  +------3-----4-----5-----6-----7------8-----9-----10----11----12-----13------14----15----16-----17----18----19-+
+>      |
+>      +
+>  
+>  
+>  
+>  
+>  
+>  
+>      +                                                                 Script is
+>      |                                                            +--+ terminated
+>      |    *--IMSAK---->                                           |    no announcement
+>      |     *---FAJR-------->                                      |
+>      |      *----SUNRISE-------->                                 v
+>      |
+>      |                              *------X
+>      |
+>      |                                      ^                       *----------SUNSET------------->
+>      |                                      |                        *-----------MAGHRIB----------------->
+>      |                                      |
+>      |                                      |
+>      |                                      +
+>      |                                   Point of
+>      |                                   Failure
+>      |
+>      |
+>  +------3-----4-----5-----6-----7------8-----9-----10----11----12-----13------14----15----16-----17----18----19-+
+>      |
+>      +
+>  
+>  
+>  
+>  
+>      +
+>      |
+>      |    *-------->
+>      |              *------>
+>      |                      *--->
+>      |
+>      |                           *-------------ZUHR---------------->
+>      |
+>      |                                                              *----SUNSET----->
+>      |                                                                               *-----MAGHRIB------->
+>      |
+>      |
+>      |
+>  +------3-----4-----5-----6-----7------8-----9-----10----11----12-----13------14----15----16-----17----18----19-+
+>      |
+>      +
+>  
+>  
+>      +
+>      |
+>      |    *-------->
+>      |              *------>
+>      |                      *--->
+>      |
+>      |                           *--------X
+>      |
+>      |                                    ^
+>      |                                    |
+>      |                          Point of  +
+>      |                          Failure
+>      |                                                          No announcements
+>      |                                        *>                are lost due to failure
+>      |                                         *>
+>      |                                          *>
+>      |                                            *---------------->
+>      |                                                              *----SUNSET----->
+>      |                                      Parent script                            *-----MAGHRIB------->
+>      |                                      determines next
+>      |                                      event
+>      |
+>      |
+>      |
+>  +------3-----4-----5-----6-----7------8-----9-----10----11----12-----13------14----15----16-----17----18----19-+
+>      |
+>      +
+>  
+
+
+
+
+
 
 
 
