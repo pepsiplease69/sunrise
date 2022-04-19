@@ -142,7 +142,9 @@ The parent job will invoke each of the scripts sequentially and at the end of la
 ![parent-script](parent-script.jpg)
 
 
-If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the scripts, the scripts for the events that have already occurred in the past, will do nothing and will not block execution and will exit immediately.
+If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the scripts, in the correct order, as usual.
+
+The scripts for the events that have already occurred in the past, will do nothing and will not block execution and will exit immediately.
 
 Execution will ultimately arrive at the script that has to wait for an event in the future to occur. The script will block execution there (this is the desired behavior).
 
