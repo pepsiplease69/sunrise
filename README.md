@@ -103,8 +103,6 @@ Once the script has been invoked, it calculates the time for the event and pause
 ![direct-method](direct-method.jpg)
 
 
-### Parent Job:
-
 The approach mentioned above has a drawback. Although it's simpler, and offers more control, it is not fail-safe.
 
 If, for example, cron kicks off sunrise job at 3:21AM and the job sits and waits till 5AM or so.
@@ -113,8 +111,12 @@ If the system goes through a reboot or loses power and has to be restarted, then
 
 ![direct-method-fail](direct-method-fail.jpg)
 
+Instead we could go for an alternate approach explained below.
 
-Instead  we can put a parent job on the crontab, to be invoked at boot up time. 
+
+### Parent Job:
+
+We can put a parent job on the crontab, to be invoked at boot up time. 
 
 ```
 
@@ -128,7 +130,6 @@ Instead  we can put a parent job on the crontab, to be invoked at boot up time.
 
 ```
 
-![parent-script](parent-script.jpg)
 
 This parent job kicks off all the scripts in the proper succession. 
 
@@ -137,9 +138,14 @@ This parent job kicks off all the scripts in the proper succession.
 
 The parent job will invoke all of the scripts and then wait for the next day to start the next run.
 
-![parent-script-fail](parent-script-fail.jpg)
+ 
+![parent-script](parent-script.jpg)
+
 
 If the device reboots for any reason or loses power inadvertently, then the next time it boots up, the parent script will run, and invoke all the scripts, the scripts for the events that have already occurred in the past, will do nothing and will not block execution and will exit immediately. Execution will ultimately arrive at the script that has to wait for an event in the future to occur. The script will block execution there (this is the desired behavior).
+
+![parent-script-fail](parent-script-fail.jpg)
+
 
 The code for the parent job looks like the following:
 
